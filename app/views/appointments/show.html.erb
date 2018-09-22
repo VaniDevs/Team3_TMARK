@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Whattheyneed:</strong>
+  <%= @appointment.whatTheyNeed %>
+</p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @appointment.datetime %>
+</p>
+
+<p>
+  <strong>Comment:</strong>
+  <%= @appointment.comment %>
+</p>
+
+<p>
+  <strong>Showup:</strong>
+  <%= @appointment.showup %>
+</p>
+
+<p>
+  <strong>Haircut:</strong>
+  <%= @appointment.haircut %>
+</p>
+
+<%= link_to 'Edit', edit_appointment_path(@appointment) %> |
+<%= link_to 'Back', appointments_path %>

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  whatTheyNeed: MyString
+  datetime: 2018-09-22 20:46:07
+  comment: MyString
+  showup: false
+  haircut: false
+
+two:
+  whatTheyNeed: MyString
+  datetime: 2018-09-22 20:46:07
+  comment: MyString
+  showup: false
+  haircut: false
