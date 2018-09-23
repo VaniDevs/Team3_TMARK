@@ -1,0 +1,29 @@
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Abby', 'Gail','ag@mail.com','604-221-3366', now(),now());
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ali', 'Mahesh','am@mail.com','778-281-3446', now(),now());
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ron', 'Morgan','rm@mail.com','778-999-5555', now(),now());
+
+insert into agencies(name, created_at, updated_at) values ('Dress for success', now(), now());
+insert into agencies(name, created_at, updated_at) values ('YWCA', now(), now());
+insert into agencies(name, created_at, updated_at) values ('Work BC', now(), now());
+
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Marry', 'Pierce','mp@mail.com','778-221-3366', now(),now());
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Abba', 'Gold','ag@gmail.com','778-221-3456', now(),now());
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Amir', 'Pakesh','ap@hotmail.com','778-221-3456', now(),now());
+
+insert into volunteers(firstname,lastname, email, phone, created_at, updated_at) values ('Rafa', 'Gray','rg@gmail.com','604-779q-5555', now(),now());
+
+insert into categories(name, created_at, updated_at) values ('office', now(), now());
+insert into categories(name, created_at, updated_at) values ('trade', now(), now());
+
+insert into subcategories(name, created_at, updated_at) values ('boot', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('shirt', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('hat', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('pants', now(), now());
+ 
+insert into products() values ()
+
+
+
+
+
+ 
