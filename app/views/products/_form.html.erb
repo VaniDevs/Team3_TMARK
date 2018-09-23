@@ -1,47 +1,118 @@
 <%= form_with(model: product, local: true) do |form| %>
-  <% if product.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+    <% if product.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
 
-      <ul>
-      <% product.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+            <ul>
+            <% product.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+    
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Job</label>
+        <div class="col-sm-3">
+            <div class="form-radio">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="typeRadios1" id="typeRadio1"
+                        value="" checked> Office Suites
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-radio">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="typeRadios1" id="typeRadios2"
+                        value="option2"> Trade
+                </label>
+            </div>
+        </div>
     </div>
-  <% end %>
 
-  <div class="field">
-  <%= form.label "category" %>
-  <%= form.select :category_id, [['Trade', 2], ['Office', 1]], class: "dropdown" %>
-  </div>
+    <div class="form-group row">
+        <label class="col-sm-3 col-form-label">Gender</label>
+        <div class="col-sm-3">
+            <div class="form-radio">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="typeRadios3" id="typeRadio8"
+                        value="" checked> Men
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-radio">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="typeRadios3" id="typeRadios9"
+                        value="option2"> Women
+                </label>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="form-radio">
+                <label class="form-check-label">
+                    <input type="radio" class="form-check-input" name="typeRadios3" id="typeRadios10"
+                        value="option3"> Non-binary
+                </label>
+            </div>
+        </div>
+    </div>
 
-  <div class="field">
-  <%= form.label "subcategory" %>
-  <%= form.select :subcategory_id, [['Hat', 3], ['Shirt', 2], ['Boot', 1]], class: "dropdown" %>
-  </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Type</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="slct1" onchange="populate(this.id,'slct2')">
+                        <option>Hat</option>
+                        <option>Shirt</option>
+                        <option>Pant</option>
+                        <option>Boot</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name, id: :product_name %>
-  </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Quantity</label>
+                <div class="col-sm-9">
+                    <input type="text" class="form-control" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Size</label>
+                <div class="col-sm-9">
+                    <select class="form-control" id="slct2">
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :color %>
-    <%= form.text_field :color, id: :product_color %>
-  </div>
-
-  <div class="field">
-    <%= form.label :size %>
-    <%= form.select :size, [['Small', 'small'], ['Medium', 'medium'], ['Large', 'large']], class: "dropdown" %>
-  </div>
-
-  <div class="field">
-    <%= form.label :quantity %>
-    <%= form.number_field :quantity, id: :product_quantity %>
-  </div>
-  
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Color</label>
+                <div class="col-sm-9">
+                    <select class="form-control">
+                        <option>blue</option>
+                        <option>black</option>
+                        <option>red</option>
+                        <option>yellow</option>
+                        <option>grey</option>
+                        <option>white</option>
+                        <option>green</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
 <% end %>
