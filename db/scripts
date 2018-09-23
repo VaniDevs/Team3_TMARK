@@ -1,5 +1,8 @@
+ALTER TABLE appointments
+DROP COLUMN IF EXISTS whatTheyNeed;
+
 ALTER TABLE appointments 
-RENAME whatTheyNeed TO whattheyneed;
+add COLUMN whattheyneed VARCHAR;
 
 alter table appointments alter column datetime   type  timestamp   without time zone using current_date + datetime ;
 
