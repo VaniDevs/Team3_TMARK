@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :categories 
     resources :subcategories 
     resources :products 
-    root to: 'products#index'
+    root to: 'static_pages#home'
 end
