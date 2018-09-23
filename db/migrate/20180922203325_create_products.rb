@@ -6,8 +6,8 @@ class CreateProducts < ActiveRecord::Migration[5.1]
       t.string :size
       t.boolean :instock
       t.integer :quantity
-      t.integer :category_id
-      t.integer :subcategory_id
+      t.string :category
+      t.string :subcategory
       t.timestamps
     end
       # add_reference :products, :category, index: true
