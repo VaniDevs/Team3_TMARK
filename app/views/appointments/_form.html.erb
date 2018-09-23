@@ -1,42 +1,92 @@
-<%= form_with(model: appointment, local: true) do |form| %>
-  <% if appointment.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+<div class="col-lg-12 col-md-12">
+    <div class="card">
+        <div class="card-header card-header-warning">
+            <h4 class="card-title">Make An Appointment</h4>
+        </div>
+        <%= form_with(model: appointment, local: true) do |form| %>
+            <% if appointment.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
 
-      <ul>
-      <% appointment.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+                    <ul>
+                    <% appointment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            <% end %>
+            
+            
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">What They Need</label>
+                        <% form.label :whatTheyNeed, class: "col-sm-3 col-form-label" do %>
+                            What They Need
+                        <% end %>
+                        <div class="col-sm-9">
+                            <%= form.text_field :whatTheyNeed, id: :appointment_whatTheyNeed ,class:"form-control"%>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Date Time</label>
+                        <% form.label :datetime, class: "col-sm-3 col-form-label" do %>
+                            Datetime
+                        <% end %>
+                        <div class="col-sm-9">
+                            <%= form.time_select :datetime, id: :appointment_datetime ,class:"form-control" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Comment</label>
+                        <% form.label :comment, class: "col-sm-3 col-form-label" do %>
+                            Comment
+                        <% end %>
+                        <div class="col-sm-9">
+                            <%= form.text_field :comment, id: :appointment_comment ,class:"form-control" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Haircut</label>
+                        <% form.label :haircut, class: "col-sm-3 col-form-label" do %>
+                            Haircut
+                        <% end %>
+                        <div class="col-sm-9">
+                            <%= form.check_box :haircut, id: :appointment_haircut ,class:"form-control" %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <div class="col-sm-9">
+                            <%= form.submit 'Submit', class: 'btn btn-default btn-block' %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        <% end %>
     </div>
-  <% end %>
+</div>
 
-  <div class="field">
-    <%= form.label :whatTheyNeed %>
-    <%= form.text_field :whatTheyNeed, id: :appointment_whatTheyNeed %>
-  </div>
 
-  <div class="field">
-    <%= form.label :datetime %>
-    <%= form.time_select :datetime, id: :appointment_datetime %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
-    <%= form.text_field :comment, id: :appointment_comment %>
-  </div>
-
-  <div class="field">
-    <%= form.label :showup %>
-    <%= form.check_box :showup, id: :appointment_showup %>
-  </div>
-
-  <div class="field">
-    <%= form.label :haircut %>
-    <%= form.check_box :haircut, id: :appointment_haircut %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>

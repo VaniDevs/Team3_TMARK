@@ -1,109 +1,111 @@
-<%= form_with(model: product, local: true) do |form| %>
-    <% if product.errors.any? %>
-        <div id="error_explanation">
-            <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
-
-            <ul>
-            <% product.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </ul>
+<div class="col-lg-12 col-md-12">
+<div class="card">
+    <div class="card-header card-header-warning">
+        <h4 class="card-title">Add New Inventory</h4>
+    </div>
+    <%= form_with(model: product, local: true) do |form| %>
+        <% if product.errors.any? %>
+            <div id="error_explanation">
+                <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+                <ul>
+                <% product.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+                </ul>
+            </div>
+        <% end %>
+        
+        
+        
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Category</label>
+                    <% form.label :category, class: "col-sm-3 col-form-label" do %>
+                        Job
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.select :category, ["Office", "Trade"],{}, {class:"form-control"} %>
+                    </div>
+                </div>
+            </div>
         </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Gender</label>
+                    <% form.label :gender, class: "col-sm-3 col-form-label" do %>
+                        Gender
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.select :gender, ["Men", "Women", "Non-binary"],{}, {class:"form-control"} %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                <label class="col-sm-3 col-form-label">Type</label>
+                    <% form.label :subcategory, class: "col-sm-3 col-form-label" do %>
+                        Type
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.select :subcategory, ["Hat", "Boot", "Shirt", "Pant"],{}, {class:"form-control"} %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Quantity</label>
+                    <% form.label :quantity, class: "col-sm-3 col-form-label" do %>
+                        quantity
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.number_field :quantity, min: 1, class:"form-control" %>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Size</label>
+                    <% form.label :size, class: "col-sm-3 col-form-label" do %>
+                        size
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.select :size, ["Small", "Medium", "Large"],{}, {class:"form-control"} %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label class="col-sm-3 col-form-label">Color</label>
+                    <% form.label :color, class: "col-sm-3 col-form-label" do %>
+                        Color
+                    <% end %>
+                    <div class="col-sm-9">
+                        <%= form.select :color, ["Blue", "Black", "White", "Red", "Yellow", "Grey", "Green"],{}, {class:"form-control"} %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <div class="col-sm-9">
+                        <%= form.submit 'Submit', class: 'btn btn-default btn-block' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     <% end %>
-    
-    
-    
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Category</label>
-                <% form.label :category, class: "col-sm-3 col-form-label" do %>
-                    Job
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.select :category, ["Office", "Trade"],{}, {class:"form-control"} %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Gender</label>
-                <% form.label :gender, class: "col-sm-3 col-form-label" do %>
-                    Gender
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.select :gender, ["Men", "Women", "Non-binary"],{}, {class:"form-control"} %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-            <label class="col-sm-3 col-form-label">Type</label>
-                <% form.label :subcategory, class: "col-sm-3 col-form-label" do %>
-                    Type
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.select :subcategory, ["Hat", "Boot", "Shirt", "Pant"],{}, {class:"form-control"} %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Quantity</label>
-                <% form.label :quantity, class: "col-sm-3 col-form-label" do %>
-                    quantity
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.number_field :quantity, min: 1, class:"form-control" %>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Size</label>
-                <% form.label :size, class: "col-sm-3 col-form-label" do %>
-                    size
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.select :size, ["Small", "Medium", "Large"],{}, {class:"form-control"} %>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-                <label class="col-sm-3 col-form-label">Color</label>
-                <% form.label :color, class: "col-sm-3 col-form-label" do %>
-                    Color
-                <% end %>
-                <div class="col-sm-9">
-                    <%= form.select :color, ["Blue", "Black", "White", "Red", "Yellow", "Grey", "Green"],{}, {class:"form-control"} %>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="form-group row">
-                <div class="col-sm-9">
-                    <%= form.submit 'Submit', class: 'btn btn-default btn-block' %>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-<% end %>
+</div>
+</div>

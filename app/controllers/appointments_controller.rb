@@ -28,11 +28,11 @@ class AppointmentsController < ApplicationController
 
     respond_to do |format|
       if @appointment.save
-        format.html { redirect_to @appointment, notice: 'Appointment was successfully created.' }
+        format.html { redirect_to root_path, notice: 'Appointment was successfully created.' }
         format.json { render :show, status: :created, location: @appointment }
       else
         format.html { render :new }
-        format.json { render json: @appointment.errors, status: :unprocessable_entity }
+        format.json { render json: @appointment.errors, status: :unprocessable_entity } 
       end
     end
   end
