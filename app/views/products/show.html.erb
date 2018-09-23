@@ -1,6 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>ID:</strong>
+  <%= @product.id %>
+</p>
+
+<p>
   <strong>Name:</strong>
   <%= @product.name %>
 </p>
@@ -26,4 +31,8 @@
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<%= link_to 'Back', product_path %>
+
+<div>
+<img src="https://lh3.googleusercontent.com/D-2svSV9aSr4_CLvF97JcHdvDMGv57FJEVAEh1dmKxP63WXKZTzxozLipb3gHsMY8FaBSQhKWh8Kc0F3dhww=w2560-h1334" />
+</div>
