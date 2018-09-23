@@ -23,7 +23,7 @@ default: &default
 
 development:
   <<: *default
-  database: TMARK_development
+  database: tmark_development
   username: postgres
   password: BCIT2Rafa
 
