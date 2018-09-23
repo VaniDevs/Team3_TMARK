@@ -17,11 +17,11 @@
         <div class="col-md-6">
             <div class="form-group row">
             <label class="col-sm-3 col-form-label">Job</label>
-                <% form.label :category_id, class: "col-sm-3 col-form-label" do %>
+                <% form.label :category, class: "col-sm-3 col-form-label" do %>
                     Job
                 <% end %>
                 <div class="col-sm-9">
-                    <%= form.select :category_id, [["Office Suites", 1],["Trade", 2]],{}, {class:"form-control"} %>
+                    <%= form.select :category, ["Office Suites", "Trade"],{}, {class:"form-control"} %>
                 </div>
             </div>
         </div>
@@ -45,11 +45,11 @@
         <div class="col-md-6">
             <div class="form-group row">
             <label class="col-sm-3 col-form-label">Type</label>
-                <% form.label :subcategory_id, class: "col-sm-3 col-form-label" do %>
+                <% form.label :subcategory, class: "col-sm-3 col-form-label" do %>
                     Type
                 <% end %>
                 <div class="col-sm-9">
-                    <%= form.select :subcategory_id, [["Hat", 1],["Boot", 2],["Shirt", 3],["Pant", 4]],{}, {class:"form-control"} %>
+                    <%= form.select :subcategory, ["Hat", "Boot", "Shirt", "Pant"],{}, {class:"form-control"} %>
                 </div>
             </div>
         </div>
@@ -105,4 +105,5 @@
             </div>
         </div>
     </div>
+    
 <% end %>

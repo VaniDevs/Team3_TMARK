@@ -65,8 +65,8 @@ ActiveRecord::Schema.define(version: 20180922210512) do
     t.string "size"
     t.boolean "instock"
     t.integer "quantity"
-    t.integer "category_id"
-    t.integer "subcategory_id"
+    t.string "category"
+    t.string "subcategory"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
