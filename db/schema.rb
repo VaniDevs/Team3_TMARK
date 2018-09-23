@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180922210512) do
   end
 
   create_table "appointments", force: :cascade do |t|
-    t.string "whattheyneed"
+    t.string "whatTheyNeed"
     t.time "datetime"
     t.string "comment"
     t.boolean "showup"
