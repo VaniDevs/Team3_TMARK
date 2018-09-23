@@ -24,7 +24,7 @@
     <% @client_name = @client.firstname + ' ' + @client.lastname %>  
       <tr>
         <td><%= appointment.whattheyneed %></td>
-        <td><%= appointment.datetime %></td>
+        <td><%= appointment.datetime.strftime('%d/%m/%Y %H:%M') %></td>
         <td><%= appointment.comment %></td>
         <td><%= appointment.showup %></td>
         <td><%= appointment.haircut %></td>

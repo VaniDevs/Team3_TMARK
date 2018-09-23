@@ -1,3 +1,8 @@
+ALTER TABLE appointments 
+RENAME whatTheyNeed TO whattheyneed;
+
+alter table appointments alter column datetime   type  timestamp   without time zone using current_date + datetime ;
+
 insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Abby', 'Gail','ag@mail.com','604-221-3366', now(),now());
 insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ali', 'Mahesh','am@mail.com','778-281-3446', now(),now());
 insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ron', 'Morgan','rm@mail.com','778-999-5555', now(),now());
