@@ -1,0 +1,44 @@
+ALTER TABLE appointments
+DROP COLUMN IF EXISTS whatTheyNeed;
+
+ALTER TABLE appointments 
+add COLUMN whattheyneed VARCHAR;
+
+alter table appointments alter column datetime   type  timestamp   without time zone using current_date + datetime ;
+
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Abby', 'Gail','ag@mail.com','604-221-3366', now(),now());
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ali', 'Mahesh','am@mail.com','778-281-3446', now(),now());
+insert into donors(firstname,lastname, email, phone, created_at, updated_at) values ('Ron', 'Morgan','rm@mail.com','778-999-5555', now(),now());
+
+insert into agencies(name, created_at, updated_at) values ('Dress for success', now(), now());
+insert into agencies(name, created_at, updated_at) values ('YWCA', now(), now());
+insert into agencies(name, created_at, updated_at) values ('Work BC', now(), now());
+
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Marry', 'Pierce','mp@mail.com','778-221-3366', now(),now());
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Abba', 'Gold','ag@gmail.com','778-221-3456', now(),now());
+insert into clients(firstname,lastname, email, phone, created_at, updated_at) values ('Amir', 'Pakesh','ap@hotmail.com','778-221-3456', now(),now());
+
+insert into volunteers(firstname,lastname, email, phone, created_at, updated_at) values ('Rafa', 'Gray','rg@gmail.com','604-779-5555', now(),now());
+insert into volunteers(firstname,lastname, email, phone, created_at, updated_at) values ('Tina', 'Gray','rg@gmail.com','604-738-5545', now(),now());
+
+insert into categories(name, created_at, updated_at) values ('office', now(), now());
+insert into categories(name, created_at, updated_at) values ('trade', now(), now());
+
+insert into subcategories(name, created_at, updated_at) values ('boot', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('shirt', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('hat', now(), now());
+insert into subcategories(name, created_at, updated_at) values ('pants', now(), now());
+ 
+insert into products(name,color,size, instock,quantity, category_id, subcategory_id, created_at, updated_at) values ('long sleeve shirt','yellow','medium',true,1,2,2,now(), now());
+insert into products(name,color,size, instock,quantity, category_id, subcategory_id, created_at, updated_at) values ('hard hat','yellow','medium',true,1,2,3,now(), now());
+insert into products(name,color,size, instock,quantity, category_id, subcategory_id, created_at, updated_at) values ('long sleeve shirt','yellow','medium',true,1,2,1,now(), now());
+
+insert into appointments (whatTheyNeed , datetime, comment, showup, haircut, created_at, updated_at, agency_id, client_id) values('shirt,hat,shoe', now(), '',true, false, now(), now(), 1, 1);
+insert into appointments (whatTheyNeed , datetime, comment, showup, haircut, created_at, updated_at, agency_id, client_id) values('boot,shoe', now(), '',true, true, now(), now(), 2, 2);
+insert into appointments (whatTheyNeed , datetime, comment, showup, haircut, created_at, updated_at, agency_id, client_id) values('boot,shoe', now(), '',true, true, now(), now(), 1, 3);
+insert into appointments (whatTheyNeed , datetime, comment, showup, haircut, created_at, updated_at, agency_id, client_id) values('boot,shoe', now(), '',true, true, now(), now(),3 , 3);
+
+
+
+
+ 
