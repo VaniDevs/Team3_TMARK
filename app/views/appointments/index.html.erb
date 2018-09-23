@@ -10,18 +10,26 @@
       <th>Comment</th>
       <th>Showup</th>
       <th>Haircut</th>
+      <th>Agency</th>
+      <th>Client</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @appointments.each do |appointment| %>
+    <% @agency = Agency.find_by(id: appointment.agency_id) %>
+    <% @agency_name = @agency.name %>
+    <% @client = Client.find_by(id: appointment.client_id) %>
+    <% @client_name = @client.firstname + ' ' + @client.lastname %>  
       <tr>
-        <td><%= appointment.whatTheyNeed %></td>
+        <td><%= appointment.whattheyneed %></td>
         <td><%= appointment.datetime %></td>
         <td><%= appointment.comment %></td>
         <td><%= appointment.showup %></td>
         <td><%= appointment.haircut %></td>
+        <td><%= @agency_name %></td>
+        <td><%= @client_name %></td>
         <td><%= link_to 'Show', appointment %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment) %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
